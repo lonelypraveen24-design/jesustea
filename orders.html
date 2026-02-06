@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Orders</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<a class="btn" href="/logout">Logout</a>
+
+<table class="orders-table">
+    <tr>
+        <th>ID</th>
+        <th>Tea</th>
+        <th>Qty</th>
+        <th>Time</th>
+        <th>Status</th>
+        <th>Action</th>
+    </tr>
+
+    {% for order in orders %}
+    <tr>
+        <td>{{ order[0] }}</td>
+        <td>{{ order[1] }}</td>
+        <td>{{ order[2] }}</td>
+        <td>{{ order[3] }}</td>
+        <td>{{ order[4] }}</td>
+        <td>
+            {% if order[4] != "Delivered" %}
+                <a class="btn" href="/update-status/{{ order[0] }}">Mark Delivered</a>
+            {% else %}
+                ✅ Done
+            {% endif %}
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+
+<nav class="navbar">
+    <div class="logo">☕ Jesus Tea</div>
+    <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/menu">Menu</a></li>
+        <li><a href="/orders">Orders</a></li>
+    </ul>
+</nav>
+
+<div class="hero">
+    <h1>All Orders</h1>
+
+    <table class="orders-table">
+        <tr>
+            <th>ID</th>
+            <th>Tea</th>
+            <th>Qty</th>
+            <th>Time</th>
+        </tr>
+
+        {% for order in orders %}
+        <tr>
+            <td>{{ order[0] }}</td>
+            <td>{{ order[1] }}</td>
+            <td>{{ order[2] }}</td>
+            <td>{{ order[3] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+</body>
+</html>

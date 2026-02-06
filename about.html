@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About - Jesus Tea</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">☕ Jesus Tea</div>
+    <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/menu">Menu</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/cart">Cart</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+</nav>
+
+<div class="hero">
+    <h1>About Jesus Tea</h1>
+    <p class="sub">We serve the best tea with love and peace.</p>
+</div>
+
+<script>
+function toggleMenu() {
+    var nav = document.querySelector(".nav-links");
+    if (nav.style.display === "flex") {
+        nav.style.display = "none";
+    } else {
+        nav.style.display = "flex";
+    }
+}
+</script>
+
+</body>
+</html>

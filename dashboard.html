@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">☕ Jesus Tea - Admin</div>
+    <ul class="nav-links">
+        <li><a href="/dashboard">Dashboard</a></li>
+        <li><a href="/orders">Orders</a></li>
+        <li><a href="/logout">Logout</a></li>
+    </ul>
+</nav>
+
+<div class="hero">
+    <h1>Dashboard</h1>
+
+    <div class="card-row">
+        <div class="card">
+            <h3>Total Orders</h3>
+            <p>{{ total_orders }}</p>
+        </div>
+
+        <div class="card">
+            <h3>Pending</h3>
+            <p>{{ pending_orders }}</p>
+        </div>
+
+        <div class="card">
+            <h3>Delivered</h3>
+            <p>{{ delivered_orders }}</p>
+        </div>
+
+        <div class="card">
+            <h3>Total Qty</h3>
+            <p>{{ total_qty }}</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

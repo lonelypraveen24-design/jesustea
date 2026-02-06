@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order - Jesus Tea</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    
+    <nav class="navbar">
+    <div class="logo">☕ Jesus Tea</div>
+    <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/menu">Menu</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/cart">Cart</a></li>
+    </ul>
+
+    <div class="hamburger" onclick="toggleMenu()">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+</nav>
+
+<div class="hero">
+    <h1>Order Page</h1>
+    <p class="sub">Choose your favorite tea ☕</p>
+
+    <!-- ORDER FORM -->
+    <form action="/order-submit" method="POST" class="order-form">
+        <label>Tea Name:</label>
+        <input type="text" name="tea" placeholder="e.g. Masala Tea" required>
+
+        <label>Quantity:</label>
+        <input type="number" name="qty" placeholder="1" required>
+
+        <button class="btn" type="submit">Send Order</button>
+    </form>
+
+    <a class="btn" href="/">Back to Home</a>
+</div>
+
+<script>
+function toggleMenu() {
+    var nav = document.querySelector(".nav-links");
+    if (nav.style.display === "flex") {
+        nav.style.display = "none";
+    } else {
+        nav.style.display = "flex";
+    }
+}
+</script>
+
+</body>
+</html>
+

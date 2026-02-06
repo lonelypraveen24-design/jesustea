@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact - Jesus Tea</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">☕ Jesus Tea</div>
+    <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/menu">Menu</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/cart">Cart</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+</nav>
+
+<div class="hero">
+    <h1>Contact Us</h1>
+    <p class="sub">Send us a message and we will reply soon.</p>
+
+    <form class="order-form">
+        <label>Name:</label>
+        <input type="text" placeholder="Your name" required>
+
+        <label>Email:</label>
+        <input type="email" placeholder="Your email" required>
+
+        <label>Message:</label>
+        <textarea placeholder="Your message" required></textarea>
+
+        <button class="btn" type="submit">Send Message</button>
+    </form>
+</div>
+
+<script>
+function toggleMenu() {
+    var nav = document.querySelector(".nav-links");
+    if (nav.style.display === "flex") {
+        nav.style.display = "none";
+    } else {
+        nav.style.display = "flex";
+    }
+}
+</script>
+
+</body>
+</html>

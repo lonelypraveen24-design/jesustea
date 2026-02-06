@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Checkout - Jesus Tea</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">☕ Jesus Tea</div>
+    <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/menu">Menu</a></li>
+        <li><a href="/cart">Cart</a></li>
+    </ul>
+</nav>
+
+<div class="hero">
+    <h1>Checkout</h1>
+
+    {% if cart_items %}
+        {% for item in cart_items %}
+            <p>{{ item.tea }} - ₹{{ item.price }}</p>
+        {% endfor %}
+
+        <p class="sub">Total Amount: ₹{{ total }}</p>
+
+        <a class="btn" href="/place-order">Place Order</a>
+    {% else %}
+        <p class="sub">No items in cart</p>
+        <a class="btn" href="/menu">Go to Menu</a>
+    {% endif %}
+</div>
+
+</body>
+</html>

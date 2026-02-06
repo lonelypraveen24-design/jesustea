@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Menu - Jesus Tea</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">☕ Jesus Tea</div>
+    <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/menu">Menu</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/cart">Cart</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+</nav>
+
+<div class="menu-container">
+    <h1 class="menu-title">Our Menu</h1>
+
+    <div class="card-row">
+        <div class="card">
+            <img src="{{ url_for('static', filename='images/masala.jpg') }}" alt="Masala Tea">
+            <h3>Masala Tea</h3>
+            <p>Price: ₹30</p>
+            <a class="btn" href="/add-to-cart/Masala Tea/30">Add to Cart</a>
+        </div>
+
+        <div class="card">
+            <img src="{{ url_for('static', filename='images/ginger.jpg') }}" alt="Ginger Tea">
+            <h3>Ginger Tea</h3>
+            <p>Price: ₹35</p>
+            <a class="btn" href="/add-to-cart/Ginger Tea/35">Add to Cart</a>
+        </div>
+
+        <div class="card">
+            <img src="{{ url_for('static', filename='images/black.jpg') }}" alt="Black Tea">
+            <h3>Black Tea</h3>
+            <p>Price: ₹25</p>
+            <a class="btn" href="/add-to-cart/Black Tea/25">Add to Cart</a>
+        </div>
+    </div>
+</div>
+
+<script>
+function toggleMenu() {
+    var nav = document.querySelector(".nav-links");
+    if (nav.style.display === "flex") {
+        nav.style.display = "none";
+    } else {
+        nav.style.display = "flex";
+    }
+}
+</script>
+
+</body>
+</html>
+
+
