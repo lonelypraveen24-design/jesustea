@@ -3,6 +3,13 @@
 <head>
     <title>Order Success</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <!-- Auto redirect after 3 seconds -->
+    <script>
+        setTimeout(function () {
+            window.location.href = "{{ url_for('menu') }}";
+        }, 3000);
+    </script>
 </head>
 <body>
 
@@ -11,10 +18,14 @@
     <p class="sub">Thank you for ordering from Jesus Tea ☕</p>
     <p class="sub">Total Items: {{ qty }}</p>
 
-    <a class="btn" href="/">Back to Home</a>
+    <p class="sub">Redirecting to menu in 3 minutes...</p>
+
+    <a class="btn" href="{{ url_for('menu') }}">Go to Menu Now</a>
 </div>
 
 </body>
 </html>
+
+
 
 
